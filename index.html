@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hogwarts | Enrollment Registry</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module"
+            src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 35px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Crimson Text', serif;
+            color: #e8dfc8;
+            background-color: #650c0c;
+            background-image:
+                radial-gradient(ellipse at top, #8a4646 0%, transparent 65%);
+        }
+
+        .main-card {
+            width: 100%;
+            max-width: 540px;
+            padding: 36px;
+            background: #6f1111;
+            border: 1px solid #786a46;
+            outline: 1px solid #786a46;
+            outline-offset: 6px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .school-name {
+            font-family: 'Cinzel', serif;
+            color: #c8b47b;
+            font-size: 11px;
+            line-height: 1.8;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 14px 0 10px;
+            color: #f0e5c9;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(25px, 5vw, 34px);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            color: #b6b19c;
+            font-size: 17px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 24px 0;
+            color: #c8b47b;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #665c40;
+        }
+
+        .section-title {
+            margin-bottom: 18px;
+            color: #c8b47b;
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .form-label {
+            color: #e0d4b7;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            padding: 12px 14px;
+            border: 1px solid #5c614f;
+            border-radius: 0;
+            background: #171e18;
+            color: #f0e5c9;
+            font-family: 'Crimson Text', serif;
+            font-size: 17px;
+        }
+
+        .form-control::placeholder {
+            color: #858878;
+        }
+
+        .form-control:focus {
+            border-color: #c8b47b;
+            background: #171e18;
+            color: #f0e5c9;
+        }
+
+        .verify-btn {
+            width: 100%;
+            margin-top: 10px;
+            padding: 14px;
+            border: 1px solid #c8b47b;
+            border-radius: 0;
+            background: #704033;
+            color: #fff0d1;
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            transition: background 0.2s;
+        }
+
+        .verify-btn:hover {
+            background: #8a5140;
+            color: #ffffff;
+        }
+
+        #result {
+            margin-top: 26px;
+            padding: 22px 18px;
+            border: 1px solid #b5a16e;
+            background: #eee3c8;
+            color: #443426;
+            font-size: 17px;
+            line-height: 1.8;
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+
+        .letter-heading {
+            margin-bottom: 12px;
+            color: #704033;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .letter-seal {
+            margin-top: 15px;
+            color: #704033;
+            font-size: 27px;
+        }
+
+        .footer {
+            margin-top: 25px;
+            color: #9f9b85;
+            font-size: 12px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .main-card {
+                padding: 26px 20px;
+            }
+
+            .school-name {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-card">
+        <div class="school-name">
+            HOGWARTS SCHOOL OF<br>
+            WITCHCRAFT AND WIZARDRY
+        </div>
+
+        <h1>Enrollment Registry</h1>
+
+        <p class="subtitle">
+            Where every name has a story.
+        </p>
+
+        <div class="divider">✦</div>
+
+        <p class="section-title">
+            THE OFFICIAL ADMISSIONS RECORD
+        </p>
+
+        <div class="mb-3">
+            <label for="first_name" class="form-label">
+                First Name
+            </label>
+
+            <input type="text"
+                   id="first_name"
+                   class="form-control"
+                   placeholder="Enter your first name">
+        </div>
+
+        <div class="mb-3">
+            <label for="last_name" class="form-label">
+                Last Name
+            </label>
+
+            <input type="text"
+                   id="last_name"
+                   class="form-control"
+                   placeholder="Enter your last name">
+        </div>
+
+        <button type="button"
+                class="verify-btn"
+                py-click="verify_candidate">
+            ✦ VERIFY ENROLLMENT ✦
+        </button>
+
+        <div id="result" aria-live="polite">
+            <div class="letter-heading">
+                A LETTER FROM THE ADMISSIONS OFFICE
+            </div>
+
+            Your enrollment result will appear here.
+
+            <div class="letter-seal">✦</div>
+        </div>
+
+        <div class="footer">
+            Established circa 990 A.D. · Hogwarts Registry
+        </div>
+
+    </main>
+
+    <script type="py" src="./main.py"></script>
+</body>
+</html>
